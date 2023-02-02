@@ -48,6 +48,10 @@ func main() {
 
 	js.Global().Set("sfomuseum_validate_feature", export_func)
 
+	// Necessary for the custom validation functionality when editing is
+	// enabled in whosonfirst/go-whosonfirst-browser
+	js.Global().Set("whosonfirst_validate_feature_custom", export_func)	
+
 	c := make(chan struct{}, 0)
 
 	log.Println("SFO Museum validate_feature WASM binary initialized")
